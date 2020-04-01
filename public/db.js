@@ -6,6 +6,7 @@ request.onupgradeneeded = function(event) {
   // create object store called "pending" and set autoIncrement to true
   const db = event.target.result;
   db.createObjectStore('pending', { autoIncrement: true });
+  store.clear();
 };
 
 request.onsuccess = function(event) {
