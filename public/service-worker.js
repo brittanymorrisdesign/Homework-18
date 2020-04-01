@@ -65,5 +65,18 @@ self.addEventListener('fetch', function(evt) {
         )
         .catch(err => console.log(err))
     );
+
+    return;
   }
+  
+  // Allows the page to be accessible offline, shows files from the cache
+  evt.respondWith(
+    caches
+      .open(CACHE_NAME)
+      .then(cache =>
+        cache
+          .match(evt.request)
+          .then(response => response || fetch(evt.request))
+      )
+  );
 });
