@@ -22,4 +22,4 @@ Giving users a fast and easy way to track their money is important, but allowing
 * Express
 * MongoDB
 * Mongoose
-* Indexed DB
+* IndexedDB
