@@ -1,9 +1,18 @@
-const FILES_TO_CACHE = ['/', '/index.html', 'app.js', 'favicon.ico'];
+const FILES_TO_CACHE = [
+  '/',
+  '/index.html',
+  '/styles.css',
+  '/index.js',
+  '/manifest.webmanifest',
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png',
+  '/db.js',
+];
 
 const CACHE_NAME = 'static-cache-v2';
 const DATA_CACHE_NAME = 'data-cache-v1';
 
-// install
+// Install and add service worker
 self.addEventListener('install', function(evt) {
   evt.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
@@ -15,7 +24,7 @@ self.addEventListener('install', function(evt) {
   self.skipWaiting();
 });
 
-// activate
+// Activate the service worker and remove old data from the cache
 self.addEventListener('activate', function(evt) {
   evt.waitUntil(
     caches.keys().then(keyList =>
@@ -33,7 +42,7 @@ self.addEventListener('activate', function(evt) {
   self.clients.claim();
 });
 
-// fetch
+// Enable the service worker to intercept network requests
 self.addEventListener('fetch', function(evt) {
   if (evt.request.url.includes('/api/')) {
     evt.respondWith(
