@@ -1,7 +1,7 @@
 # Homework-18
 PWA: Online/Offline Budget Trackers
 
-Github Page: https://brittanymorrisdesign.github.io/Homework-18 </br>
+Github Page: github.com/brittanymorrisdesign/Homework-18 </br>
 Live Demo: https://banana-pie-87432.herokuapp.com/</br>
 
 ![budget-tracker](https://user-images.githubusercontent.com/44029053/78176508-937b4800-742a-11ea-91b1-0daf0e8d09d6.png)
